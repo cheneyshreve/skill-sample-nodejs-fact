@@ -7,7 +7,7 @@ a better place for all of us
 - girls who inspire us
 
 
-# check back soon for set-up and installation instructions, this app is currently under construction
+# check back soon for set-up and installation instructions, this app is currently under construction. The badass woman fact-library is under construction.
 
-Have a woman you'd like to include, visit my github pages and send me an email, I'd love to hear from you.
-Constructive feedback only, correspondence from trolls will be ignored. 
+Have a woman you'd like to include?  Visit my github pages website and send me an email, I'd love to hear from you.
+Constructive feedback only, correspondence from trolls will be ignored.
