@@ -8,3 +8,6 @@ a better place for all of us
 
 
 # check back soon for set-up and installation instructions, this app is currently under construction
+
+Have a woman you'd like to include, visit my github pages and send me an email, I'd love to hear from you.
+Constructive feedback only, correspondence from trolls will be ignored. 
