@@ -148,15 +148,25 @@ const handlers = {
         this.emit('GetNewFactIntent');
     },
     'GetNewFactIntent': function () {
-        const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
-        const randomFact = factArr[factIndex];
-        const speechOutput = GET_FACT_MESSAGE + randomFact;
+            const allFacts = data;
+            const unspokenFacts = data;
+            let speechOutput;
 
-        this.response.cardRenderer(SKILL_NAME, randomFact);
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
-    },
+           if (unspokenFacts.length > 0 ){
+               const fact = unspokenFacts.shift();
+               speechOutput = GET_FACT_MESSAGE + fact;
+               this.response.cardRenderer(SKILL_NAME, fact);
+               this.response.speak(speechOutput);
+               this.emit(':responseReady');
+           } else {
+               const factIndex = Math.floor(Math.random() * allFacts.length);
+               const randomFact = allFacts[factIndex];
+               speechOutput = GET_FACT_MESSAGE + randomFact;
+               this.response.cardRenderer(SKILL_NAME, randomFact);
+               this.response.speak(speechOutput);
+               this.emit(':responseReady');
+           }
+        },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
