@@ -1,22 +1,7 @@
-/* eslint-disable  func-names */
-/* eslint quote-props: ["error", "consistent"]*/
-/**
- * This sample demonstrates a simple skill built with the Amazon Alexa Skills
- * nodejs skill development kit.
- * This sample supports multiple lauguages. (en-US, en-GB, de-DE).
- * The Intent Schema, Custom Slots and Sample Utterances for this skill, as well
- * as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-fact
- **/
 
 'use strict';
 const Alexa = require('alexa-sdk');
 
-//=========================================================================================================================================
-//TODO: The items below this comment need your attention.
-//=========================================================================================================================================
-
-//Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.
-//Make sure to enclose your value in quotes, like this: const APP_ID = 'amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1';
 const APP_ID = undefined;
 
 const SKILL_NAME = 'Badass Woman Facts';
@@ -25,9 +10,7 @@ const HELP_MESSAGE = 'You can say tell me a badass woman fact, or, you can say e
 const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'Goodbye!';
 
-//=========================================================================================================================================
-//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
-//=========================================================================================================================================
+
 const data = [
   'A talented British mathematician born in 1815, Augusta Ada Lovelace, is considered the first computer programmer.',
   'American Mae Carol Jemison was the first black woman to travel in space orbit aboard the Space Shuttle Endeavour.',
@@ -132,9 +115,7 @@ const data = [
  'Ester Wilkins was an American dentist and dental hygienist. She is best known for writing the first comprehensive book on dental hygiene. She founded the Esther Wilkins Education program to support dental hygiene professionals educate children on dental health. She received many awards for her work, such as the Lucy Hobb\'s Project Industry Icon Award, a Distinguished Service Award from the International College of Dentists, and the City of Boston declared an Ester Wilkins Day.'
 ];
 
-//=========================================================================================================================================
-//Editing anything below this line might break your skill.
-//=========================================================================================================================================
+
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -143,30 +124,43 @@ exports.handler = function(event, context, callback) {
     alexa.execute();
 };
 
+
+let randomNumbers = [];
+
+while (randomNumbers.length < data.length){
+   let rand = Math.floor(Math.random() * data.length);
+   if(randomNumbers.indexOf(rand) > -1) continue;
+    randomNumbers[randomNumbers.length] = rand;
+}
+
 const handlers = {
     'LaunchRequest': function () {
         this.emit('GetNewFactIntent');
     },
-    'GetNewFactIntent': function () {
-            const allFacts = data;
-            const unspokenFacts = data;
-            let speechOutput;
+'GetNewFactIntent': function () {
 
-           if (unspokenFacts.length > 0 ){
-               const fact = unspokenFacts.shift();
-               speechOutput = GET_FACT_MESSAGE + fact;
-               this.response.cardRenderer(SKILL_NAME, fact);
-               this.response.speak(speechOutput);
-               this.emit(':responseReady');
-           } else {
-               const factIndex = Math.floor(Math.random() * allFacts.length);
-               const randomFact = allFacts[factIndex];
-               speechOutput = GET_FACT_MESSAGE + randomFact;
-               this.response.cardRenderer(SKILL_NAME, randomFact);
-               this.response.speak(speechOutput);
-               this.emit(':responseReady');
-           }
-        },
+    const factArr = data;
+    let factIndex;
+
+    if (randomNumbers.length > 0){
+      factIndex = randomNumbers.pop();
+    } else {
+
+      while (randomNumbers.length < data.length) {
+        let rand = Math.floor(Math.random() * data.length);
+        if (randomNumbers.indexOf(rand) > -1) continue;
+          randomNumbers[randomNumbers.length] = rand;
+        }
+       factIndex = randomNumbers.pop();
+    }
+
+    const randomFact = factArr[factIndex];
+    const speechOutput = GET_FACT_MESSAGE + randomFact;
+
+    this.response.cardRenderer(SKILL_NAME, randomFact);
+    this.response.speak(speechOutput);
+    this.emit(':responseReady');
+},
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
