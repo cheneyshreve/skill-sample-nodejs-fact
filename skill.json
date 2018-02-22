@@ -3,19 +3,19 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Learn fun facts about badass women.",
+          "summary": "Learn fun facts about rad women.",
           "examplePhrases": [
-            "Alexa open badass women facts",
-            "Alexa ask badass women facts for a fact",
-            "Alexa tell badass women facts to tell me trivia"
+            "Alexa open rad women facts",
+            "Alexa ask rad women facts for a fact",
+            "Alexa tell rad women facts to tell me trivia"
           ],
           "keywords": [
-            "badass women",
+            "rad women",
             "facts",
             "trivia"
           ],
-          "name": "Badass Women Facts",
-          "description": "Ask for Badass Woman Facts, and be reminded just how awesome women are.\n\nBadass Women Facts provides you with remiders of the accomplisments and sass from women aroudn the world.\n\nTo start, just say \"Alexa, launch Badass Woman Facts\" or \"Alexa, open Badass Woman Facts\" to get a fact\".\n\nAt anytime, you can stop by saying \"Alexa, stop\""
+          "name": "rad Women Facts",
+          "description": "Ask for rad Woman Facts, and be reminded just how awesome women are.\n\nrad Women Facts provides you with remiders of the accomplisments and sass from women aroudn the world.\n\nTo start, just say \"Alexa, launch rad Woman Facts\" or \"Alexa, open rad Woman Facts\" to get a fact\".\n\nAt anytime, you can stop by saying \"Alexa, stop\""
         },
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",

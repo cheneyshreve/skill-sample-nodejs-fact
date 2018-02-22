@@ -102,8 +102,8 @@ var data = [
   'Ester Wilkins was an American dentist and dental hygienist. She is best known for writing the first comprehensive book on dental hygiene. She founded the Esther Wilkins Education program to support dental hygiene professionals educate children on dental health. She received many awards for her work, such as the Lucy Hobb\'s Project Industry Icon Award, a Distinguished Service Award from the International College of Dentists, and the City of Boston declared an Ester Wilkins Day.'
 ];
 
-var SKILL_NAME = "Badass Woman Facts";
+var SKILL_NAME = "Rad Woman Facts";
 var GET_FACT_MESSAGE = "Here's your fact: ";
-var HELP_MESSAGE = "You can say tell me a badass woman fact, or, you can say exit... What can I help you with?";
+var HELP_MESSAGE = "You can say tell me a rad woman fact, or, you can say exit... What can I help you with?";
 var HELP_REPROMPT = "What can I help you with?";
 var STOP_MESSAGE = "Goodbye!";
